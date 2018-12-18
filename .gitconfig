@@ -1,3 +1,0 @@
-[alias]
-    stp = subtree push
-    stpp = subtree push --prefix
