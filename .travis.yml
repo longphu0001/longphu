@@ -1,5 +1,13 @@
 language: node_js
 node_js: lts/*
 install: true
-script: 
+script:
   - echo "script"
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+  keep-history: true
+  on:
+    branch: master
