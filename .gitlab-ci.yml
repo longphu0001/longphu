@@ -1,0 +1,54 @@
+image: node:11.4.0
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - test
+  - build
+  - deploy
+
+# Before Script
+before_script:
+  - . sh/check-version.sh
+  - echo "before script"
+
+script:
+  - echo "script"
+
+test:
+  stage: test
+  script:
+    - echo "test"
+  only:
+    - dev
+    - test
+
+build:
+  stage: build
+  dependencies:
+    - test
+  script:
+    - echo "build"
+  artifacts:
+    paths:
+      - build/
+  only:
+    - dev
+    - master
+
+pages:
+  stage: deploy
+  dependencies:
+    - test
+    - build
+  script:
+    - echo "pages"
+  artifacts:
+    paths:
+      - build/
+    expire_in: 30 days
+  only:
+    - dev
+    - master
