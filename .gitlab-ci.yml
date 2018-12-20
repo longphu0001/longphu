@@ -11,8 +11,8 @@ stages:
 
 # Before Script
 before_script:
+  - . sh/npm-install.sh
   - . sh/check-version.sh
-  - echo "before script"
 
 test:
   stage: test
