@@ -1,4 +1,4 @@
-image: node:11.4.0
+image: node:latest
 
 cache:
   paths:
@@ -13,9 +13,6 @@ stages:
 before_script:
   - . sh/check-version.sh
   - echo "before script"
-
-script:
-  - echo "script"
 
 test:
   stage: test
