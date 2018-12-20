@@ -1,6 +1,13 @@
+# Travics Cheatsheet : https://devhints.io/travis
 language: node_js
+
 node_js: lts/*
+
 install: true
+
+before_script:
+  - . sh/check-version.sh
+
 script:
   - echo "script"
 
