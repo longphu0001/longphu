@@ -41,10 +41,10 @@ pages:
     - test
     - build
   script:
-    - echo "pages"
+    - mv build/ public/
   artifacts:
     paths:
-      - build
+      - public
     expire_in: 30 days
   only:
     - dev
