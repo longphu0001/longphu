@@ -30,7 +30,7 @@ build:
     - echo "build"
   artifacts:
     paths:
-      - build/
+      - build
   only:
     - dev
     - master
@@ -44,7 +44,7 @@ pages:
     - echo "pages"
   artifacts:
     paths:
-      - build/
+      - build
     expire_in: 30 days
   only:
     - dev
